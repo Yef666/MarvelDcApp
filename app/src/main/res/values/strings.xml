@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MarvelDcApp</string>
+    <string name="email">Correo Electronico</string>
+    <string name="password">Contraseña</string>
+    <string name="login">Iniciar sesion</string>
+    <string name="welcome_text">Hola, Listo para comprar?</string>
+    <string name="our_categories_text">Nuestras categorias</string>
+    <string name="companies">¿Qué prefieres? ¿Marvel o DC?</string>
 </resources>
