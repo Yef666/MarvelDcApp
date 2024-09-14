@@ -6,7 +6,8 @@ data class Hero(
     val description: String,
     val image: String,
     val publisherId: Int,
-    val companyId: Int // Nuevo campo agregado
+    val companyId: Int
+
 ) {
     companion object {
         val heroes = mutableListOf<Hero>(
