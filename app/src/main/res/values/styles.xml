@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema principal de la app -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Aplica la fuente Hey Comic a toda la app -->
+        <item name="android:fontFamily">@font/hey_comic</item>
+    </style>
+</resources>

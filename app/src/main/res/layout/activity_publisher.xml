@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:padding="20dp"
     android:fitsSystemWindows="true"
-    tools:context=".activities.PublisherActivity">
+    tools:context=".activities.PublisherActivity"
+    android:theme="@style/AppTheme">
 
     <!-- Nombre del Publicador -->
     <TextView
