@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:padding="25dp">
 
+        <!-- Header layout with username and logout button -->
         <LinearLayout
             android:id="@+id/headerLayout"
             android:layout_width="match_parent"
@@ -54,6 +55,7 @@
 
         </LinearLayout>
 
+        <!-- Publisher section -->
         <TextView
             android:id="@+id/categoryTV"
             android:layout_width="match_parent"
@@ -79,6 +81,32 @@
             app:layout_constraintTop_toBottomOf="@+id/categoryTV"
             app:layout_constraintVertical_bias="0.0" />
 
+        <!-- Company section -->
+        <TextView
+            android:id="@+id/company_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/company_list_text"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/publisher_recycleview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/company_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/company_title"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <!-- Heroes section -->
         <TextView
             android:id="@+id/heroes_title"
             android:layout_width="match_parent"
@@ -86,7 +114,7 @@
             android:text="@string/hero_list_text"
             android:textSize="24sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@+id/publisher_recycleview"
+            app:layout_constraintTop_toBottomOf="@+id/company_recyclerview"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -102,29 +130,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/heroes_title"
             app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/figures_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/all_figures_text"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/heroes_recyclerview"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/figures_recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/figures_title"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

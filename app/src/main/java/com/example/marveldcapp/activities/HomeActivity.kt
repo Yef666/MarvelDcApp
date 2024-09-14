@@ -9,13 +9,15 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.GridLayoutManager
 import com.example.marveldcapp.MainActivity
 import com.example.marveldcapp.R
 import com.example.marveldcapp.adapters.PublisherAdapter
+import com.example.marveldcapp.adapters.CompanyAdapter
 import com.example.marveldcapp.adapters.HeroAdapter
+import com.example.marveldcapp.models.Company
 import com.example.marveldcapp.models.Hero
 import com.example.marveldcapp.models.Publisher
 import com.example.marveldcapp.models.User
@@ -24,6 +26,7 @@ class HomeActivity : AppCompatActivity() {
     lateinit var usernameTV: TextView
     lateinit var logoutBtn: ImageView
     lateinit var publisherRecyclerView: RecyclerView
+    lateinit var companyRecyclerView: RecyclerView // Nuevo RecyclerView para las compañías
     lateinit var heroRecyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +38,7 @@ class HomeActivity : AppCompatActivity() {
         usernameTV = findViewById(R.id.usernameTV)
         logoutBtn = findViewById(R.id.logoutBtn)
         publisherRecyclerView = findViewById(R.id.publisher_recycleview)
+        companyRecyclerView = findViewById(R.id.company_recyclerview) // Vincular el RecyclerView de compañías
         heroRecyclerView = findViewById(R.id.heroes_recyclerview)
 
         // Configurar el RecyclerView de publishers
@@ -46,9 +50,17 @@ class HomeActivity : AppCompatActivity() {
         }
         publisherRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
+        // Configurar el RecyclerView de compañías
+        companyRecyclerView.adapter = CompanyAdapter(Company.companies) { company ->
+            val intent = Intent(this@HomeActivity, CompanyActivity::class.java)
+            intent.putExtra("companyId", company.id) // Envía el ID o cualquier dato necesario
+            startActivity(intent)
+        }
+        companyRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
         // Configurar el RecyclerView de héroes
         heroRecyclerView.adapter = HeroAdapter(Hero.heroes) { hero ->
-            val intent = Intent(this@HomeActivity, Hero::class.java)
+            val intent = Intent(this@HomeActivity, HeroActivity::class.java)
             intent.putExtra("heroId", hero.id)
             startActivity(intent)
         }
@@ -78,3 +90,4 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 }
+

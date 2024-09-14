@@ -3,7 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#999999</color>
-    <color name="marvelRed">#FFE74C3C</color> <!-- Vibrant and Appetite-Stimulating -->
+    <color name="marvelRed">#FF0000</color> <!-- Vibrant and Appetite-Stimulating -->
 
     <!-- Secondary Color (Accent Theme) -->
     <color name="carrotOrange">#F39C12</color> <!-- Warm and Energetic -->
